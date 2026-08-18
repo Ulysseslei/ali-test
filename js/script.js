@@ -1330,6 +1330,10 @@ function loadDomain() {
 
     updateProgress();
     updateNavigation();
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"   // 如果想要平滑捲動就留著，想要瞬間跳到頂就改成 "auto"
+    });
 }
 
 

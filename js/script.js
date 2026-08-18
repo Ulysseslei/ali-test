@@ -1330,10 +1330,12 @@ function loadDomain() {
 
     updateProgress();
     updateNavigation();
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"   // 如果想要平滑捲動就留著，想要瞬間跳到頂就改成 "auto"
-    });
+    // 切換領域時自動捲回頁面頂端（相容手機）
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
+    }, 10);
 }
 
 
